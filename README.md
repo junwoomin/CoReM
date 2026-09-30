@@ -1,3 +1,5 @@
+![FleetOccMap and CoReM architecture](assets/Fleet_Occ_map.png)
+
 # CoReM: Temporal Occupancy Mapping
 
 [한국어](README_ko.md)

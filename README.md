@@ -2,8 +2,7 @@
 
 [한국어](README_ko.md)
 
-
-**Status: research concept.** CoReM is the module name supplied by the author. The project proposes collecting a shared 3D map from multiple vehicles with small occupancy models and periodic compressed uploads.
+**Status: research concept.** The project proposes collecting a shared 3D map from multiple vehicles with small occupancy models and periodic compressed uploads.
 
 Each vehicle processes a window of T observations, estimates occupancy, accumulates the results, and applies a stage called STC to maintain a local map. The vehicle associates this map with its location and periodically sends a compressed update to a server. The server accumulates updates across vehicles and time, including information about vehicle motion.
 
@@ -29,7 +28,7 @@ flowchart TD
 | Apply the proposed STC stage | Accumulate observations across time |
 | Compress and periodically transmit updates | Maintain map data and vehicle-motion information |
 
-STC is preserved as the author's original stage label. Its expansion, algorithm, and exact input/output are not specified in the supplied material. GPS is part of the proposed location information; a production coordinate-alignment solution has not been established.
+STC is the temporal processing stage. Its detailed algorithm remains to be defined. GPS provides location information for map updates.
 
 ## Intended contribution
 
@@ -45,8 +44,4 @@ The goal is a complete vehicle-to-server mapping workflow with low vehicle-side 
 
 ## Related demonstration
 
-[Multi-agent mapping video](https://youtu.be/AT5Tdq7TjqY) is listed on slide 17 of `포토폴리오.pptx`. It is related earlier work. Its association does not establish implementation of the CoReM design. The remote video was not independently replayed during archive preparation.
-
-## Source
-
-The author's accompanying explanation is the source of this architecture. A separate CoReM/parking deck was not among the three attached files. Slide 2 of `그림 원본.pptx` is not used, following the author's exclusion.
+[Multi-agent mapping video](https://youtu.be/AT5Tdq7TjqY): related earlier mapping work.

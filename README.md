@@ -4,7 +4,26 @@
 
 [한국어](README_ko.md)
 
-**Status: research concept.** The project proposes collecting a shared 3D map from multiple vehicles with small occupancy models and periodic compressed uploads.
+**Status: research concept extending CARLA-based mapping work.** CoReM aims to equip vehicles with a low-power data collection and inference module, obtain observations during driving, and send results from multiple vehicles to a central computer to build a shared 3D map. The intended model would run on a low-power AI accelerator such as DEEPX, allowing a vehicle to participate in driving-data collection by connecting the module.
+
+## Motivation
+
+The idea was to make mapping data collection accessible to vehicles and research environments that lack their own large-scale driving-data collection infrastructure. Rather than requiring identical sensor configurations across vehicles, the system would make use of the available cameras, LiDAR, radar, or combinations of these sensors, adapting collection and processing to each configuration.
+
+A lightweight model on each vehicle would process sensor observations, accumulate useful information, and transmit updates. The central computer would combine data from multiple vehicles to build the map. The ultimate goal was to let vehicles with different sensor configurations participate in a common mapping workflow through a low-power module.
+
+## CARLA and development-kit validation workflow
+
+CARLA was used to obtain driving observations under different sensor configurations, taking advantage of its flexible sensor placement. Building on the earlier CARLA mapping work, the intended device-integration workflow was:
+
+1. Collect driving data in CARLA while varying each vehicle's sensor configuration.
+2. Feed and replay the recorded data on a DEEPX-based development kit to emulate incoming sensor streams from a real vehicle.
+3. Process the data with a lightweight model on the development kit and transmit the results to the central computer.
+4. Combine results and location information from multiple vehicles on the central computer to accumulate a map.
+
+The approach would start with replaying CARLA data as device inputs and later extend to live sensor inputs from real vehicles.
+
+## Proposed map processing
 
 Each vehicle processes a window of T observations, estimates occupancy, accumulates the results, and applies a stage called STC to maintain a local map. The vehicle associates this map with its location and periodically sends a compressed update to a server. The server accumulates updates across vehicles and time, including information about vehicle motion.
 

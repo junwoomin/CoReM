@@ -1,8 +1,8 @@
-![FleetOccMap and CoReM architecture](assets/Fleet_Occ_map.png)
+![FleetOccMap and CoReM architecture](../assets/Fleet_Occ_map.png)
 
 # CoReM: Temporal Occupancy Mapping
 
-[English](README.md)
+[English](../README.md)
 
 **상태: CARLA 기반 매핑 작업에서 확장한 연구 구상.** CoReM은 차량에 저전력 데이터 수집·추론 모듈을 장착해 주행 중 관측을 얻고, 여러 차량의 결과를 중앙 컴퓨터로 보내 공통 3D 지도를 축적하는 프로젝트입니다. DEEPX 같은 저전력 AI 가속기에서 실행할 수 있는 경량 모델을 만들어, 모듈을 연결하면 주행 데이터 수집에 참여할 수 있는 구조를 목표로 했습니다.
 

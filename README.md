@@ -2,7 +2,7 @@
 
 # CoReM: Temporal Occupancy Mapping
 
-[한국어](README_ko.md)
+[한국어](docs/README_ko.md)
 
 **Status: research concept extending CARLA-based mapping work.** CoReM aims to equip vehicles with a low-power data collection and inference module, obtain observations during driving, and send results from multiple vehicles to a central computer to build a shared 3D map. The intended model would run on a low-power AI accelerator such as DEEPX, allowing a vehicle to participate in driving-data collection by connecting the module.
 
